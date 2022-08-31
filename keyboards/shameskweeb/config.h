@@ -7,7 +7,7 @@
 
 /* key matrix size */
 #define MATRIX_ROWS 4
-#define MATRIX_COLS 2
+#define MATRIX_COLS 3
 
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.

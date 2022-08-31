@@ -13,14 +13,13 @@
  * The second converts the arguments into a two-dimensional array which
  * represents the switch matrix.
  */
+
 #define LAYOUT( \
-	K00, K01,   \
-    K10, K11,   \
-    K21, K20,   \
-    K31, K30    \
+	L00, L01, L02, R00, R01, R02,   \
+        L10, L11, L12, R10, R11, R12  \
 ) { \
-	{ K00,   K01 },  \
-	{ K10,   K11 },  \
-	{ K20,   K21 },  \
-	{ K30,   K31 },  \
+	{ L00, L01, L02 },  \
+	{ R00, R01, R02 },  \
+	{ L10, L11, L12 },  \
+	{ R10, R11, R12 } \
 }
