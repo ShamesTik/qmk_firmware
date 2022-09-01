@@ -6,7 +6,7 @@
 #include "config_common.h"
 
 /* key matrix size */
-#define MATRIX_ROWS 4
+#define MATRIX_ROWS 6 // doubles
 #define MATRIX_COLS 3
 
 /*
