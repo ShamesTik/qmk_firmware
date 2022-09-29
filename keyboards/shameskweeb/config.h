@@ -15,6 +15,9 @@
 #define SOFT_SERIAL_PIN A15
 #define SPLIT_USB_DETECT // default on on arm ? but isnt?
 
+#define SPLIT_MAX_CONNECTION_ERRORS 10
+#define SPLIT_CONNECTION_CHECK_TIMEOUT 500
+
 // #define LED_NUM_LOCK_PIN B0
 // #define LED_CAPS_LOCK_PIN B1
 // #define LED_SCROLL_LOCK_PIN B2

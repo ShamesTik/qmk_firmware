@@ -2,11 +2,14 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+
 enum layers{
   _QWERTY,
   _FN,
   _ADJ
 };
+
+oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) { /* First encoder */
@@ -64,27 +67,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    )
 };
 
-//const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//[_QWERTY] = LAYOUT(
-//    LT(_FN,KC_1), KC_2, KC_3,
-//    KC_4, KC_5, KC_6,
-//    KC_4, KC_5, KC_6,
-//    KC_1, KC_2, KC_3
-//),
-//[_FN] = LAYOUT(
-//    KC_1, KC_2, QK_BOOT,
-//    KC_4, KC_5, KC_6,
-//    KC_4, KC_5, KC_6,
-//    TO(_QWERTY), TO(_ADJ), KC_1
-//),
-//[_ADJ] = LAYOUT(
-//    KC_1, KC_2,KC_3,
-//    KC_4, KC_5, KC_6,
-//    KC_1, KC_2, KC_3,
-//    TO(_QWERTY), TO(_FN), KC_1
-//)
-//};
-//
 #ifdef OLED_ENABLE
 bool oled_task_user(void) {
     // Host Keyboard Layer Status
