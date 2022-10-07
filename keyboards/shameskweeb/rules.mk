@@ -11,8 +11,8 @@ BOOTLOADER = stm32-dfu
 BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = yes       # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
-CONSOLE_ENABLE = no 		# Console for debug
-COMMAND_ENABLE = no 		# Commands for debug and configuration
+CONSOLE_ENABLE = no         # Console for debug
+COMMAND_ENABLE = no         #Commands for debug and configuration
 NKRO_ENABLE = yes           # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
@@ -23,9 +23,14 @@ ENCODER_ENABLE = yes        # Enable Rotary Encoder
 TAP_DANCE_ENABLE = yes
 KEY_LOCK_ENABLE = yes
 KEY_OVERRIDE_ENABLE = yes
+DYNAMIC_MACRO_ENABLE = yes
+WPM_ENABLE = yes
 
 SPLIT_KEYBOARD = yes
 SERIAL_DRIVER = usart
 
 OLED_ENABLE = yes
 OLED_DRIVER = SSD1306
+
+UNICODEMAP_ENABLE = yes
+

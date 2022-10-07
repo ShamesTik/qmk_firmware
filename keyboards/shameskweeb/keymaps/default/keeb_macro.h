@@ -9,7 +9,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case MAIL:
             if (record->event.pressed) {
                 SEND_STRING("REMOVEDMAIL");
-
             } else {
                 // when keycode MAIL is released
             }
