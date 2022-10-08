@@ -18,14 +18,19 @@ enum layers {
     AUSSIE,
     TINY,
     WIDE,
-    SCRIPT, // doesnt work 
+    SCRIPT,
+    PAPER,
     CLEAR,
 };
 
 bool isRecording = false;
 
-void dynamic_macro_record_start_user(void) { isRecording = true; }
-void dynamic_macro_record_end_user(int8_t direction) { isRecording = false; }
+void dynamic_macro_record_start_user(void) {
+    isRecording = true;
+}
+void dynamic_macro_record_end_user(int8_t direction) {
+    isRecording = false;
+}
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_180;
@@ -52,13 +57,15 @@ bool oled_task_user(void) {
         case AUSSIE:
             oled_write_P(PSTR("AUSSIE   "), false);
             break;
-         case TINY:
+        case TINY:
             oled_write_P(PSTR("TINY    "), false);
             break;
-       case SCRIPT:
+        case SCRIPT:
             oled_write_P(PSTR("SCRIPT  "), false);
             break;
-
+        case PAPER:
+            oled_write_P(PSTR("PAPEPT  "), false);
+            break;
         case WIDE:
             oled_write_P(PSTR("WIDE    "), false);
             break;
@@ -66,7 +73,6 @@ bool oled_task_user(void) {
             oled_write_ln_P(PSTR("Undefined"), false);
     }
     oled_write_P(isRecording ? PSTR("\tREC\n") : PSTR("    \n"), false);
-    // oled_write_P(PSTR("\n"), false);
 
     // Host Keyboard LED Status
     led_t led_state = host_keyboard_led_state();
@@ -123,7 +129,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return false;
 }
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE]  = LAYOUT(
         KC_1,                           KC_ESC,  KC_F1,  KC_F2,   KC_F3,  KC_F4,  KC_F5, KC_F6, KC_F7, KC_F8, KC_F9,      KC_F10,KC_F11, KC_F12, KC_PSCR,KC_PPLS, KC_PMNS,
@@ -150,7 +155,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______,               _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______, _______, _______
         ),
 [FN]       = LAYOUT(
-        XXXXXXX,                        XXXXXXX, TO(AUSSIE), TO(TINY),TO(WIDE), TO(SCRIPT), XXXXXXX, XXXXXXX,                   UC_M_WC, UC_M_LN, UC_M_MA, UC_M_EM,  XXXXXXX, XXXXXXX, KC_NLCK, KC_CAPS, KC_SLCK,
+        XXXXXXX,                        XXXXXXX, TO(AUSSIE), TO(TINY),TO(WIDE), TO(SCRIPT), TO(PAPER), XXXXXXX,                   UC_MOD, XXXXXXX, UC_M_MA, UC_M_EM,  XXXXXXX, XXXXXXX, KC_NLCK, KC_CAPS, KC_SLCK,
         XXXXXXX, XXXXXXX,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX,               XXXXXXX, KC_BTN1, KC_MS_U, KC_BTN2, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX,               XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
@@ -188,8 +193,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,_______,          LT(2, KC_ESC), X(AUSSIE_A),   KC_S,    KC_P,   X(AUSSIE_F),   X(AUSSIE_G),             X(AUSSIE_H),  X(AUSSIE_J),   X(AUSSIE_K),   KC_L,   _______, _______, _______, _______, _______,
         _______,_______,               KC_LSFT, _______, X(AUSSIE_Y),    X(AUSSIE_X),   X(AUSSIE_C),   X(AUSSIE_V),  KC_Q,      KC_U,  X(AUSSIE_M),   _______,_______, _______, _______, _______, _______,
         _______,_______,                _______, _______,_______, KC_SPC, MO(SPACE_FN),                                KC_SPC, KC_SPC, KC_RALT,MO(FN),  _______, _______, _______, _______
-        )
-//
+        ),
+
+[PAPER]       = LAYOUT(
+        _______,                        TO(BASE), _______, _______,  _______,  _______, _______, _______,                   _______, _______, _______, _______,  _______, _______, _______, _______, _______,
+        _______,_______,                _______,  _______,   _______,    _______,   _______,   _______,  _______,  _______,  _______,   _______,   _______,   _______, _______,  _______, _______,
+        _______,_______,                _______,  X(PAPER_Q),   X(PAPER_W),    X(PAPER_E),   X(PAPER_R),   X(PAPER_T),            X(PAPER_Z),  X(PAPER_U),   X(PAPER_I),   X(PAPER_O),   X(PAPER_P),    _______, _______, _______,
+        _______,_______,          LT(2, KC_ESC), X(PAPER_A),   X(PAPER_S),    X(PAPER_D),   X(PAPER_F),   X(PAPER_G),             X(PAPER_H),  X(PAPER_J),   X(PAPER_K),   X(PAPER_L),   _______, _______, _______, _______, _______,
+        _______,_______,               KC_LSFT, _______, X(PAPER_Y),    X(PAPER_X),   X(PAPER_C),   X(PAPER_V),  X(PAPER_B),      X(PAPER_N),  X(PAPER_M),   _______,_______, _______, _______, _______, _______,
+        _______,_______,                _______, _______,_______, KC_SPC, MO(SPACE_FN),                                KC_SPC, KC_SPC, KC_RALT,MO(FN),  _______, _______, _______, _______
+        ),
 // [CLEAR]       = LAYOUT(
 //         _______,                        _______, _______, _______,  _______,  _______, _______, _______,                   _______, _______, _______, _______,  _______, _______, _______, _______, KC_SLCK,
 //         _______, _______,               _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______,  _______, _______, _______, _______, _______,
