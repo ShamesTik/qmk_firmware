@@ -20,7 +20,7 @@
 #define SPLIT_CONNECTION_CHECK_TIMEOUT 500
 
 /* Debounce reduces chatter () - set 0 if debouncing is not needed */
-#define DEBOUNCE 2
+#define DEBOUNCE 10
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
@@ -78,3 +78,4 @@
 //#define BOOTMAGIC_LITE_COLUMN 0
 
 #define UNICODE_SELECTED_MODES UC_WINC
+#define TAPPING_TERM 175
