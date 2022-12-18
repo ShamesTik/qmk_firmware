@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______,               KC_LOCK, _______, _______, _______, _______,                                     _______,_______, _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R
         ),
 [SPACEFAT_FN] = LAYOUT(
-        _______,                        _______,  _______, _______,  _______, _______, _______,                           _______, _______, _______, _______, _______, _______, _______, KC_NLCK, KC_CAPS, KC_SLCK,
+        _______,                        _______,  _______, _______,  _______, _______, _______,                           _______, _______, _______, _______, _______, _______, _______, KC_LNUM, KC_LCAP, KC_LSCR,
         _______, _______,               _______, KC_P1,   KC_P2,    KC_P3,   KC_P4,   KC_P5, KC_P6,                       KC_P7, KC_P8, KC_P9, KC_P0, _______, _______, _______, _______,
         _______, _______,               _______, _______, _______,  _______,  _______,_______,                            _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______,               _______, _______,_______, _______, _______,_______,                               _______, _______, _______,  _______,  _______, _______, _______, _______, _______,
@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______,               _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______, _______, _______
         ),
 [FN]       = LAYOUT(
-        XXXXXXX,                        XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,                   UC_MOD, XXXXXXX, UC_M_MA, UC_M_EM,  XXXXXXX, XXXXXXX, KC_NLCK, KC_CAPS, KC_SLCK,
+        XXXXXXX,                        XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, KC_LNUM, KC_LCAP, KC_LSCR,
         XXXXXXX, XXXXXXX,               DT_PRNT, DT_UP, DT_DOWN, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX,               XXXXXXX, KC_BTN1, KC_MS_U, KC_BTN2, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX,               XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
