@@ -33,8 +33,8 @@ OLED_ENABLE = yes
 OLED_DRIVER = SSD1306
 
 UNICODEMAP_ENABLE = yes
-# LTO_ENABLE = yes
 DEBOUNCE_TYPE = sym_eager_pk
+LTO_ENABLE = YES
 
 SRC += features/mouse_turbo_click.c
 DEFERRED_EXEC_ENABLE = yes
