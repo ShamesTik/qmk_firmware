@@ -20,7 +20,7 @@
 #define SPLIT_CONNECTION_CHECK_TIMEOUT 500
 
 /* Debounce reduces chatter () - set 0 if debouncing is not needed */
-#define DEBOUNCE 10
+#define DEBOUNCE 15
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
